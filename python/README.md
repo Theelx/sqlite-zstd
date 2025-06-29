@@ -8,8 +8,14 @@ Depending on the data, this can reduce the size of the database by 80% while kee
 Note that a compression VFS such as https://github.com/mlin/sqlite_zstd_vfs might be suited better depending on the use case. That has very different tradeoffs and capabilities, but the end result is similar.
 
 ## Install
+
+From PyPI (if published):
 ```bash
 pip install sqlite-zstd
+```
+Local:
+```bash
+pip install .
 ```
 
 ## Usage
