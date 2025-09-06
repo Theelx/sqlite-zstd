@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.2", "setuptools_scm>=6.2", "setuptools_rust"]
+requires = ["setuptools>=64", "setuptools-scm>=8", "setuptools-rust"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,3 +19,12 @@ sqlite_zstd = "lib"
 
 [tool.setuptools_scm]
 root = ".."
+
+[[tool.setuptools-rust.ext-modules]]
+target = "sqlite_zstd.libsqlite_zstd"
+path = "../Cargo.toml"
+binding = "NoBinding"
+features = ["build_extension"]
+
+[tool.distutils.bdist_wheel]
+py_limited_api = "cp39"
