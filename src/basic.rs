@@ -103,8 +103,8 @@ fn zstd_compress_fn_tail<'a>(
         encoder.include_magicbytes(false).context("did")?;
     }
     // for personal use ONLY until i get proper core selection upstreamed
-    //let n_workers = 2;
-    //encoder.multithread(n_workers).context("set n_workers")?;
+    let n_workers = 2;
+    encoder.multithread(n_workers).context("set n_workers")?;
     let res = encoder
         .compress(input_value)
         .context("writing data to zstd encoder")?;
